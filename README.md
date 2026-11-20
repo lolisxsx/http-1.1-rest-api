@@ -6,29 +6,29 @@
 
 | № | Файл | Описание |
 |---|------|----------|
-| 1 | `task1_raw_http.py` | HTTP вручную: запрос `GET / HTTP/1.1` с заголовком `Host` через сокет (аналог netcat) |
-| 2 | `task2_static_server.py` | Статический сервер: ответы 200, 404, 405; `Content-Type` по расширению файла |
-| 3 | `task3_rest_client.py` | REST-клиент: получение данных публичного API, разбор JSON, вывод полей |
-| 4 | `task4_crud_scheme.py` | Схема вызовов: CRUD-запросы и ожидаемые статусы для `/users` |
+| 1 | `1.py` | HTTP вручную: запрос `GET / HTTP/1.1` с заголовком `Host` через сокет (аналог netcat) |
+| 2 | `2r.py` | Статический сервер: ответы 200, 404, 405; `Content-Type` по расширению файла |
+| 3 | `3.py` | REST-клиент: получение данных публичного API, разбор JSON, вывод полей |
+| 4 | `4.py` | Схема вызовов: CRUD-запросы и ожидаемые статусы для `/users` |
 
 ## Запуск
 
 ```bash
 # 1. Ручной HTTP-запрос (хост по умолчанию example.com)
-python task1_raw_http.py example.com
+python 1.py example.com
 
 # 2. Статический сервер (порт и папка необязательны)
-python task2_static_server.py 8000 public
+python 2.py 8000 public
 # проверка:
 curl -i http://localhost:8000/          # 200
 curl -i http://localhost:8000/nope      # 404
 curl -i -X POST http://localhost:8000/  # 405
 
 # 3. REST-клиент (нужен доступ в интернет)
-python task3_rest_client.py
+python 3.py
 
 # 4. Схема CRUD для /users
-python task4_crud_scheme.py
+python 4.py
 ```
 
 ## Статусы для /users
